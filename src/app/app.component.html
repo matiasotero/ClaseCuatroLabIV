@@ -1,0 +1,23 @@
+<h1>
+  {{title}}
+</h1>
+  <input type="text" [(ngModel)]="nombre">
+  <br>
+  <p>{{nombre}}</p>
+
+  <input type="button" (click)="MostrarNombre()" value="Presionar"/>
+  <br>
+  <h1><a [href]="nombre" *ngIf="mostrar=='true'">{{nombre}}</a></h1><!--para validar usar valores booleanos entre comillas simples o usar 0 ó 1-->
+  <!--*ngIf crea un nuevo objeto HTML-->
+  <br>
+  <fieldset style="width:300px">
+    <legend>Con evento change:</legend>
+    <input type="radio" name="radioejemplo" value="mostrar" (change)="mostrar=true"/>Mostrar<br>
+    <input type="radio" name="radioejemplo" value="ocultar" (change)="mostrar=false"/>Ocultar<br>
+  </fieldset>
+  <br>
+    <fieldset style="width:300px">
+    <legend>Con ngModel:</legend>
+      <input type="radio" name="radioejemplo" [(ngModel)]="mostrar" value="true" />Mostrar<br>
+      <input type="radio" name="radioejemplo" [(ngModel)]="mostrar" value="false" />Ocultar<br>
+    </fieldset>
